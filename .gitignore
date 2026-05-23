@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Generated embeddings (rebuilt on first run)
+player_embeddings.npy
+player_embeddings_multi.npy
+
+# Data backups (keep main CSVs, exclude backups)
+data/*_backup_*.csv
+data/_tm_cache.pkl
+
+# Downloaded driver/browser files
+downloaded_files/
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+cache/
+
+# Pipeline run logs
+pipeline_*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

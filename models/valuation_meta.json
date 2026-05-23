@@ -1,0 +1,70 @@
+{
+  "features": [
+    "age",
+    "minutes",
+    "psi",
+    "league_diff",
+    "goals_per90",
+    "assists_per90",
+    "sh_per90",
+    "sot_per90",
+    "g_per_shot",
+    "g_per_sot",
+    "tackles_per90",
+    "int_per90",
+    "xg_per90",
+    "xag_per90",
+    "gk_savepct",
+    "gk_cspct",
+    "gk_ga90",
+    "pos_GK",
+    "pos_DF",
+    "pos_MF",
+    "pos_FW"
+  ],
+  "n_training_samples": 1959,
+  "n_folds": 5,
+  "interval": {
+    "q_low": 0.1,
+    "q_high": 0.9,
+    "label": "80% PI",
+    "calib_constant_m": 2.15
+  },
+  "calibration": {
+    "raw_coverage": 0.8,
+    "cal_coverage": 0.8
+  },
+  "lgbm_params": {
+    "objective": "regression",
+    "metric": "mae",
+    "n_estimators": 1200,
+    "learning_rate": 0.025,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 8,
+    "subsample": 0.8,
+    "colsample_bytree": 0.75,
+    "reg_alpha": 0.15,
+    "reg_lambda": 0.5,
+    "random_state": 42,
+    "n_jobs": -1,
+    "verbose": -1
+  },
+  "baseline": {
+    "label": "Formula (baseline)",
+    "mae": 2.402,
+    "mape": 22.7,
+    "r2": 0.922
+  },
+  "lgbm_cv": {
+    "label": "LightGBM (OOF CV)",
+    "mae": 7.872,
+    "mape": 96.4,
+    "r2": 0.388
+  },
+  "improvement": {
+    "mae_pct": -227.7,
+    "mape_pct": -324.7,
+    "r2_delta": -0.534
+  }
+}

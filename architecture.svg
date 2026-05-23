@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">ScoutAI - System Architecture</text>
+  <text x="450" y="56" text-anchor="middle" font-size="12" fill="#64748b">2,135 players across 5 European leagues with real-time streaming</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- ===== LAYER 1: Browser ===== -->
+  <rect x="270" y="72" width="360" height="64" rx="10" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="450" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Browser / UI</text>
+  <text x="450" y="113" text-anchor="middle" font-size="11" fill="#bfdbfe">Search  |  Best XI  |  Transfer Window  |  DNA  |  Gems  |  Agent</text>
+  <text x="450" y="128" text-anchor="middle" font-size="10" fill="#93c5fd">Session Memory  |  Shortlist  |  Scout Reports  |  Compare</text>
+
+  <!-- Arrow: Browser to FastAPI -->
+  <line x1="450" y1="136" x2="450" y2="158" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="464" y="151" font-size="10" fill="#94a3b8">HTTP / SSE</text>
+
+  <!-- ===== LAYER 2: FastAPI Server ===== -->
+  <rect x="30" y="160" width="840" height="110" rx="10" fill="#7c3aed" stroke="#6d28d9" stroke-width="1.5"/>
+  <text x="450" y="182" text-anchor="middle" font-size="14" font-weight="bold" fill="white">FastAPI Server (server.py)  -  28 API Endpoints</text>
+
+  <!-- Feature pills row 1 -->
+  <rect x="48" y="192" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="109" y="209" text-anchor="middle" font-size="11" fill="white">Semantic Search</text>
+
+  <rect x="182" y="192" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="243" y="209" text-anchor="middle" font-size="11" fill="white">Best XI Builder</text>
+
+  <rect x="316" y="192" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="377" y="209" text-anchor="middle" font-size="11" fill="white">Transfer Window</text>
+
+  <rect x="450" y="192" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="511" y="209" text-anchor="middle" font-size="11" fill="white">Team DNA</text>
+
+  <rect x="584" y="192" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="645" y="209" text-anchor="middle" font-size="11" fill="white">Hidden Gems</text>
+
+  <rect x="718" y="192" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="779" y="209" text-anchor="middle" font-size="11" fill="white">ReAct Agent</text>
+
+  <!-- Feature pills row 2 -->
+  <rect x="48" y="228" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="109" y="245" text-anchor="middle" font-size="11" fill="white">Scout Reports</text>
+
+  <rect x="182" y="228" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="243" y="245" text-anchor="middle" font-size="11" fill="white">Session Memory</text>
+
+  <rect x="316" y="228" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="377" y="245" text-anchor="middle" font-size="11" fill="white">Cheaper Alts</text>
+
+  <rect x="450" y="228" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="511" y="245" text-anchor="middle" font-size="11" fill="white">Shortlist</text>
+
+  <rect x="584" y="228" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="645" y="245" text-anchor="middle" font-size="11" fill="white">Style Clusters</text>
+
+  <rect x="718" y="228" width="122" height="26" rx="5" fill="#5b21b6"/>
+  <text x="779" y="245" text-anchor="middle" font-size="11" fill="white">Hot Reload</text>
+
+  <text x="450" y="264" text-anchor="middle" font-size="10" fill="#ddd6fe" font-style="italic">All analysis endpoints stream results in real time via Server-Sent Events (SSE)</text>
+
+  <!-- Arrows: FastAPI to bottom boxes -->
+  <line x1="160" y1="270" x2="160" y2="308" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="450" y1="270" x2="450" y2="308" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="740" y1="270" x2="740" y2="308" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ===== LAYER 3: Three boxes ===== -->
+
+  <!-- LLM Backend -->
+  <rect x="30" y="310" width="254" height="200" rx="10" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+  <text x="157" y="335" text-anchor="middle" font-size="13" font-weight="bold" fill="#1c1917">LLM Backend (llm.py)</text>
+  <text x="157" y="352" text-anchor="middle" font-size="10" fill="#44403c">Auto-detected at startup</text>
+
+  <rect x="48" y="360" width="218" height="30" rx="5" fill="#fbbf24"/>
+  <text x="157" y="380" text-anchor="middle" font-size="11" fill="#1c1917">Ollama / llama3 - Local</text>
+
+  <rect x="48" y="400" width="218" height="30" rx="5" fill="#fbbf24"/>
+  <text x="157" y="420" text-anchor="middle" font-size="11" fill="#1c1917">Anthropic Claude API - Cloud</text>
+
+  <rect x="48" y="440" width="218" height="30" rx="5" fill="#fbbf24"/>
+  <text x="157" y="460" text-anchor="middle" font-size="11" fill="#1c1917">Template Fallback - No LLM</text>
+
+  <text x="157" y="490" text-anchor="middle" font-size="10" fill="#44403c">Scout reports, agent reasoning,</text>
+  <text x="157" y="504" text-anchor="middle" font-size="10" fill="#44403c">explainability narration</text>
+
+  <!-- ML + Search Engine -->
+  <rect x="323" y="310" width="254" height="200" rx="10" fill="#10b981" stroke="#059669" stroke-width="1.5"/>
+  <text x="450" y="335" text-anchor="middle" font-size="13" font-weight="bold" fill="white">ML + Search Engine</text>
+  <text x="450" y="352" text-anchor="middle" font-size="10" fill="#d1fae5">sentence-transformers + LightGBM</text>
+
+  <rect x="341" y="360" width="218" height="30" rx="5" fill="#059669"/>
+  <text x="450" y="380" text-anchor="middle" font-size="11" fill="white">all-MiniLM-L6-v2 Embeddings</text>
+
+  <rect x="341" y="400" width="218" height="30" rx="5" fill="#059669"/>
+  <text x="450" y="420" text-anchor="middle" font-size="11" fill="white">LightGBM Valuation Ensemble</text>
+
+  <rect x="341" y="440" width="218" height="30" rx="5" fill="#059669"/>
+  <text x="450" y="460" text-anchor="middle" font-size="11" fill="white">K-Means Style Clustering</text>
+
+  <rect x="341" y="480" width="218" height="22" rx="5" fill="#059669"/>
+  <text x="450" y="495" text-anchor="middle" font-size="11" fill="white">UMAP Visualisation</text>
+
+  <!-- Data Layer -->
+  <rect x="616" y="310" width="254" height="200" rx="10" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+  <text x="743" y="335" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Data Layer</text>
+  <text x="743" y="352" text-anchor="middle" font-size="10" fill="#cbd5e1">pipeline/ + data/ + models/</text>
+
+  <rect x="634" y="360" width="218" height="30" rx="5" fill="#334155"/>
+  <text x="743" y="380" text-anchor="middle" font-size="11" fill="white">2,135 Players / 5 Leagues CSV</text>
+
+  <rect x="634" y="400" width="218" height="30" rx="5" fill="#334155"/>
+  <text x="743" y="420" text-anchor="middle" font-size="11" fill="white">2135 x 384 Embedding Matrix</text>
+
+  <rect x="634" y="440" width="218" height="30" rx="5" fill="#334155"/>
+  <text x="743" y="460" text-anchor="middle" font-size="11" fill="white">Data Pipeline (pipeline/)</text>
+
+  <rect x="634" y="480" width="218" height="22" rx="5" fill="#334155"/>
+  <text x="743" y="495" text-anchor="middle" font-size="11" fill="white">Hot-reload without restart</text>
+
+  <!-- ===== Footer: League bar ===== -->
+  <rect x="30" y="524" width="840" height="56" rx="8" fill="#1e293b"/>
+  <text x="450" y="545" text-anchor="middle" font-size="11" fill="#94a3b8">Leagues supported</text>
+
+  <!-- EPL -->
+  <rect x="48" y="551" width="130" height="22" rx="4" fill="#38bdf8"/>
+  <text x="113" y="566" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Premier League</text>
+
+  <!-- La Liga -->
+  <rect x="192" y="551" width="130" height="22" rx="4" fill="#f97316"/>
+  <text x="257" y="566" text-anchor="middle" font-size="10" fill="white" font-weight="bold">La Liga</text>
+
+  <!-- Bundesliga -->
+  <rect x="336" y="551" width="130" height="22" rx="4" fill="#eab308"/>
+  <text x="401" y="566" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Bundesliga</text>
+
+  <!-- Serie A -->
+  <rect x="480" y="551" width="130" height="22" rx="4" fill="#8b5cf6"/>
+  <text x="545" y="566" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Serie A</text>
+
+  <!-- Ligue 1 -->
+  <rect x="624" y="551" width="130" height="22" rx="4" fill="#ef4444"/>
+  <text x="689" y="566" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Ligue 1</text>
+
+  <!-- Hybrid scoring note -->
+  <text x="786" y="566" text-anchor="middle" font-size="9" fill="#64748b">Hybrid: 70% Semantic</text>
+  <text x="786" y="577" text-anchor="middle" font-size="9" fill="#64748b">20% PSI + 10% Value</text>
+
+</svg>
